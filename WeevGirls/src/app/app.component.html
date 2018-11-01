@@ -1,30 +1,50 @@
-<div class="container-fluid m-0 text-center">
-    <div class="row justify-content-end py-3 header">
-        <div class="col-lg-4 col-md col-sm-12">
-            <img class="logo my-auto" src="../assets/Logo and text.png" />
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav bg-dark" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
+        <mat-toolbar color="primary" class="home" routerLink="/home">
+            <img src="../../assets//Weev Logo.png" alt="Logo" class="img-fluid w-75 mx-auto">
+        </mat-toolbar>
+
+        <mat-tree [dataSource]="nestedDataSource" [treeControl]="nestedTreeControl" class="example-tree bg-dark">
+            <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
+                <li class="mat-tree-node text-white">
+                    <button mat-icon-button disabled></button>
+                    <a class="link" routerLink=".">{{node.filename}}</a>
+                </li>
+            </mat-tree-node>
+
+            <mat-nested-tree-node *matTreeNodeDef="let node; when: hasNestedChild">
+                <li>
+                    <div class="mat-tree-node text-white">
+                        <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'toggle ' + node.filename">
+                            <mat-icon class="mat-icon-rtl-mirror">
+                                {{nestedTreeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                            </mat-icon>
+                        </button>
+                        {{node.filename}}
+                    </div>
+                    <ul [class.example-tree-invisible]="!nestedTreeControl.isExpanded(node)">
+                        <ng-container matTreeNodeOutlet></ng-container>
+                    </ul>
+                </li>
+            </mat-nested-tree-node>
+        </mat-tree>
+        <div class="aboutAndProf text-center">
+            <!-- <a class="link" mat-button color="accent" routerLink=".">Sign Up</a>|<a class="link" mat-button color="accent" routerLink=".">Log In</a> -->
+            <!-- <a class="w-100 link" mat-button color="accent" routerLink=".">My Profile</a> -->
+            <a class="w-100 link" mat-button color="accent" routerLink="/about">About</a>
+            <a class="w-100 link" mat-button color="accent" routerLink=".">Weev want to hear your story</a>
         </div>
-        <div class="col-lg-4 col-md col-sm-12 contact">
-            <div class="row ml-3">
-                <i class="material-icons col-1 text-center">call</i>
-                <p class="col text-left">(+27)82 689 6355</p>
-            </div>
-            <div class="row ml-3">
-                <i class="material-icons col-1 text-center">email</i>
-                <p class="col text-left"><a href="mailto:niki.friderichs@gmail.com">niki.friderichs@gmail.com</a></p>
-            </div>
-        </div>
-    </div>
-    <h1 class="mt-4">Who are we</h1>
-    <p class="mx-5">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a nibh quis ligula sollicitudin facilisis. Praesent est purus, eleifend vel tincidunt quis, pulvinar at lectus. Proin ac interdum erat, id mattis neque. Donec euismod enim egestas neque
-        scelerisque, vitae posuere orci fermentum. Sed vehicula nisi eu urna sodales blandit. Proin odio tellus, fringilla a tincidunt non, varius feugiat massa. Mauris rutrum lorem dolor, vitae porta tellus congue fringilla. Nam eget metus nec purus
-        viverra sagittis et eu dui. Vestibulum dignissim, arcu tincidunt condimentum rhoncus, ante orci malesuada velit, id ultricies justo elit sit amet risus. Mauris tempus quis arcu id volutpat. Nam ut tristique metus.
-    </p>
-    <div class="my-5 container-fluid row justify-content-center">
-        <div class="col-md-6 col-sm-12">
-            <lib-ngx-responsive-embed class="ratio-16by9 mx-auto">
-                <youtube-player [videoId]="id" (ready)="savePlayer($event)" (change)="onStateChange($event)"></youtube-player>
-            </lib-ngx-responsive-embed>
-        </div>
-    </div>
-</div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+            <mat-form-field class="w-75 mx-auto" [floatLabel]="'never'" color="accent">
+                <input matInput placeholder="Search" value="" color="accent">
+            </mat-form-field>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

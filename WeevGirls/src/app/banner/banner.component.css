@@ -1,0 +1,16 @@
+.banner-img{
+    background: url('../../assets/Girls-laughing.jpg') center no-repeat;
+    background-size: 100%;
+    height: 250px;
+    width: 100%;
+}
+
+.content{
+    background-image: radial-gradient(black, transparent);
+    width: 100%;
+    height: 250px;
+}
+
+.content p{
+    font-size: 20px;
+}

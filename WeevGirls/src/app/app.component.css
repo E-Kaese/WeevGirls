@@ -1,16 +1,62 @@
-* {
-    color: black;
+.sidenav-container {
+    height: 100%;
 }
 
-.header {
-    background-color: #407fdd;
+.sidenav {
+    width: 280px;
 }
 
-.logo {
-    width: 100%;
-    height: auto;
+.mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
 }
 
-.contact {
-    margin-top: 2.5%;
+.mat-tab-label {
+    margin: auto;
+}
+
+.example-tree-invisible {
+    display: none;
+}
+
+.example-tree ul, .example-tree li {
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+}
+
+.mat-icon-rtl-mirror {
+    color: #ff5252;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+}
+
+.link:hover {
+    cursor: pointer;
+}
+
+.mat-toolbar .mat-form-field-underline {
+    background: #ff5252 !important;
+}
+
+.tabs {
+    margin: 0px 3%;
+}
+
+.aboutAndProf {
+    width: 280px;
+    position: fixed;
+    bottom: 0px;
+    background-color: #343A40;
+}
+
+.h-200 {
+    height: 200px;
+}
+
+.home:hover{
+    cursor: pointer;
 }

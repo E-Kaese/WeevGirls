@@ -1,0 +1,61 @@
+{
+    "Successful Women": "",
+    "Inspiring Women": "",
+    "Future Thinking Women": {
+        "Aerospace": "",
+        "Agriculture": {
+            "Fishing": "",
+            "Timber": "",
+            "Tobacco": ""
+        },
+        "Chemical": {
+            "Pharmaceutical": ""
+        },
+        "Computer": {
+            "Software": "",
+            "Hardware": ""
+        },
+        "Construction": "",
+        "Defense": {
+            "Arms": ""
+        },
+        "Education": "",
+        "Energy": {
+            "Electrical Power": "",
+            "Petroleum": ""
+        },
+        "Entertainment": "",
+        "Financial Services": {
+            "Insurance": ""
+        },
+        "Food": {
+            "Fruit Production": ""
+        },
+        "Healthcare": "",
+        "Hospitality": "",
+        "Information": "",
+        "Manufacturing": {
+            "Automotive": "",
+            "Electronics": "",
+            "Pulp and Paper": "",
+            "Steel": "",
+            "Shipbuilding": ""
+        },
+        "Mass Media": {
+            "Broadcasting": "",
+            "Film": "",
+            "Music": "",
+            "News": "",
+            "Publishing": "",
+            "World Wide Web": ""
+        },
+        "Mining": "",
+        "Telecommunications": {
+            "Internet": ""
+        },
+        "Transport": "",
+        "Water": "",
+        "Service": ""
+    },
+    "Educated Women": ""
+}
