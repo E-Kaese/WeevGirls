@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { LayoutModule } from '@angular/cdk/layout';
 // tslint:disable-next-line:max-line-length
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatTabsModule, MatFormFieldModule, MatTreeModule, MatInputModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatTabsModule, MatFormFieldModule, MatTreeModule, MatInputModule, MatAutocompleteModule, MatOptionModule } from '@angular/material';
 
 @NgModule({
     imports: [
@@ -14,7 +14,9 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
         MatTabsModule,
         MatFormFieldModule,
         MatTreeModule,
-        MatInputModule
+        MatInputModule,
+        MatAutocompleteModule,
+        MatOptionModule
     ],
     exports: [
         LayoutModule,
@@ -26,7 +28,9 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
         MatTabsModule,
         MatFormFieldModule,
         MatTreeModule,
-        MatInputModule
+        MatInputModule,
+        MatAutocompleteModule,
+        MatOptionModule
     ]
 })
 export class WeevMaterialModule { }

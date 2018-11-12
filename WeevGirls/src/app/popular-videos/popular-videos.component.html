@@ -1,0 +1,8 @@
+<div class="row m-0 justify-content-start">
+  <div *ngFor="let item of db.videos | async" class="col-md-3 col-sm-12 mt-3">
+    <lib-ngx-responsive-embed class="ratio-16by9">
+      <youtube-player [videoId]="item.id" (ready)="savePlayer($event)" (change)="onStateChange($event)"></youtube-player>
+    </lib-ngx-responsive-embed>
+    <p>{{item.title}}</p>
+  </div>
+</div>
